@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+.munazum_decisions.jsonl
