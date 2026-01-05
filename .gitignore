@@ -6,8 +6,9 @@ __pycache__/
 # IDE
 .idea/
 
+# Project-specific
+.munazum_decisions.jsonl
+
 # OS
 .DS_Store
 Thumbs.db
-
-.munazum_decisions.jsonl
