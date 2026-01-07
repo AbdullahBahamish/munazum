@@ -1,29 +1,58 @@
-Munazum
+# 🗂️ Munazum
 
-Munazum is a Python-based CLI tool designed to safely and intelligently organise cluttered directories—such as the Downloads folder—into a clean, structured hierarchy.
+### *A safe, intelligent CLI for organising real-world folders*
 
-It combines rule-based file classification with assistive ML suggestions, while prioritising user control, transparency, and zero-risk previews.
+<p align="center">
+  <b>Turn chaos into structure — without risking your files.</b>
+</p>
 
-Munazum is intentionally conservative: it never modifies your filesystem unless you explicitly allow it.
+---
 
-✨ Key Features
+## 🚀 What is Munazum?
 
-📂 Intelligent categorisation of files (documents, archives, executables, videos, code, etc.)
+**Munazum** is a Python-based command-line tool that **analyses and organises cluttered directories** (such as your Downloads folder) into a clean, predictable structure.
 
-🧠 Assistive ML suggestions (confidence-based, non-destructive)
+It combines **deterministic file rules** with **assistive machine-learning suggestions**, while keeping the user fully in control through transparent logging and a strict dry-run mode.
 
-🛡️ --dry-run mode for zero-risk previews
+No silent actions. No irreversible operations. No guesswork.
 
-🔍 --verbose mode for full execution transparency
+---
 
-📦 Modern Python packaging (pyproject.toml, editable installs)
+## ✨ Why Munazum?
 
-⚙️ Works on real-world messy folders (e.g. Downloads)
+Most file organisers either:
 
-📁 Output Structure
+* act blindly, or
+* over-promise “AI magic”
 
-When executed (without --dry-run), Munazum organises files into an Organized/ folder inside the target directory:
+Munazum does neither.
 
+It is built for users who value:
+
+* 🔍 **Visibility** over automation
+* 🛡️ **Safety** over speed
+* 🧠 **Explainable decisions** over black boxes
+
+---
+
+## 🧠 How It Works
+
+Munazum processes a directory in three stages:
+
+1. **Scan**
+   Recursively inspects files and folders.
+
+2. **Decide**
+   Applies rule-based classification, enhanced with confidence-scored ML suggestions.
+
+3. **Execute (optional)**
+   Copies files into a structured `Organized/` folder — *only if explicitly allowed*.
+
+---
+
+## 📁 Resulting Structure
+
+```text
 Organized/
 ├─ documents/
 ├─ archives/
@@ -31,121 +60,99 @@ Organized/
 ├─ videos/
 ├─ code/
 └─ others/
+```
 
+Original files are **never deleted or moved** — only copied.
 
-Original files are copied, not deleted or moved.
+---
 
-🚀 Installation
+## 🛠️ Installation
 
-Clone the repository:
-
+```bash
 git clone https://github.com/your-username/munazum.git
 cd munazum
-
-
-Install Munazum in editable mode:
-
 pip install -e .
+```
 
+Munazum is installed in **editable mode**, allowing global execution during development.
 
-This allows you to run Munazum from any directory while continuing development.
+---
 
-▶️ Usage
-1️⃣ Basic run (recommended first)
+## ▶️ Usage
 
-From any directory you want to organise:
+### 🔹 Safe Preview (Recommended)
 
-python -m munazum run .
-
-
-This will:
-
-create an Organized/ folder
-
-copy files into categorised subfolders
-
-2️⃣ Dry-run mode (safe preview)
-
-No files or folders will be created.
-
+```bash
 python -m munazum run . --dry-run
+```
 
+> Shows what *would* happen — makes **zero filesystem changes**.
 
-Output example:
+---
 
-DRY RUN — no files will be copied
-Done.
-ML suggestions (assistive only):
+### 🔹 Full Transparency Mode
 
-
-Use this to validate behaviour before real execution.
-
-3️⃣ Verbose dry-run (recommended for first real test)
-
-Shows every planned operation without touching the filesystem:
-
+```bash
 python -m munazum run . --dry-run --verbose
-
+```
 
 Example output:
 
+```text
 INFO: Target folder: C:\Users\USER\Downloads
-INFO: Output folder: C:\Users\USER\Downloads\Organized
 INFO: Planned operations: 57
+INFO: DRY-RUN: Copying report.pdf → Organized/documents/report.pdf
+```
 
-INFO: DRY-RUN: Copying file.pdf → Organized/documents/file.pdf
-INFO: DRY-RUN: Copying setup.exe → Organized/executables/setup.exe
+---
 
+### 🔹 Real Execution
 
-This mode is ideal for:
+```bash
+python -m munazum run .
+```
 
-understanding decisions
+> Executes the planned organisation and creates the `Organized/` folder.
 
-building trust
+---
 
-debugging classification rules
+## 🛡️ Safety First
 
-🧠 Design Philosophy
+* Dry-run mode is **strict**
+* No folders or files are created unless permitted
+* All operations are logged
+* No destructive actions by design
 
-Munazum is built on three principles:
+Munazum assumes **user trust must be earned, not assumed**.
 
-Safety first
-Nothing happens without explicit intent. --dry-run guarantees zero side effects.
+---
 
-Transparency over magic
-Decisions are visible, logged, and explainable. ML assists—it does not override.
+## 🧩 Design Principles
 
-Real-world readiness
-Designed and tested against chaotic directories, not artificial examples.
+* **Conservative by default**
+* **Transparent by design**
+* **Modular and extensible**
+* **Built for real folders, not demos**
 
-🛠️ Development Notes
+---
 
-Python ≥ 3.10 recommended
+## 📦 Technical Stack
 
-Packaged using pyproject.toml
+* Python 3.10+
+* `pyproject.toml` packaging
+* Editable installs via `pip`
+* CLI module execution (`python -m munazum`)
 
-Editable install supported
+---
 
-Flat-layout project with explicit package declaration
+##    Author
 
-📌 Status
+**Abdullah Bahamish**
 
-Munazum is actively developed and tested on real user data.
-Future improvements may include:
+Computer Science student · AI & systems enthusiast
 
-confirmation prompts
+---
 
-ignore rules (e.g. installers, temp files)
+## 📄 License
 
-preview-only structure creation
-
-configurable categories
-
-   Author
-
-Abdullah Bahamish
-Computer Science student with interests in AI, systems design, and workflow optimisation.
-
-📄 License
-
-MIT License (or specify your preferred license).
+MIT License
