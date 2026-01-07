@@ -1,15 +1,19 @@
-# 🗂️ Munazum
-
-### *A safe, intelligent CLI for organising real-world folders*
-
 <p align="center">
-  <img src="assets/munazum-logo.png" alt="Munazum Logo" width="220"/>
-  <b>Turn chaos into structure — without risking your files.</b>
+  <img 
+    src="assets/munazum-logo.png" 
+    alt="Munazum Logo"
+    style="max-width: 100%; height: auto;"
+  />
 </p>
 
-<h1 align="center">Munazum</h1>
+<h1 align="center" style="font-size: 3em;">🗂️ Munazum</h1>
+
+<p align="center">
+  <strong>A safe, intelligent CLI for organising real-world folders</strong>
+</p>
 
 ---
+
 
 ## 🚀 What is Munazum?
 
