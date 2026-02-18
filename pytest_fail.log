@@ -1,0 +1,39 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Center\Mission2027_2years\Productivity Projects\munazum
+configfile: pyproject.toml
+plugins: anyio-4.11.0, dash-3.2.0
+collected 23 items
+
+tests\test_cli.py ..                                                     [  8%]
+tests\test_decision_log.py ..                                            [ 17%]
+tests\test_executor.py ...                                               [ 30%]
+tests\test_planner.py ...                                                [ 43%]
+tests\test_rules.py .....                                                [ 65%]
+tests\test_scanner.py ...FF..s                                           [100%]
+
+================================== FAILURES ===================================
+___________________ test_recursive_scan_includes_subfolder ____________________
+tests\test_scanner.py:46: in test_recursive_scan_includes_subfolder
+    assert names == {"a.txt", "b.txt"}
+E   AssertionError: assert {'a.txt'} == {'a.txt', 'b.txt'}
+E     
+E     Extra items in the right set:
+E     'b.txt'
+E     Use -v to get more diff
+_______________________ test_max_depth_limits_recursion _______________________
+tests\test_scanner.py:64: in test_max_depth_limits_recursion
+    assert "l1.txt" in names
+E   AssertionError: assert 'l1.txt' in {'root.txt'}
+============================== warnings summary ===============================
+tests/test_decision_log.py::test_log_decision_creates_log_file
+tests/test_decision_log.py::test_log_decision_writes_valid_json
+tests/test_executor.py::test_execute_plan_moves_file
+  D:\Center\Mission2027_2years\Productivity Projects\munazum\munazum\decision_log.py:28: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    "timestamp": datetime.utcnow().isoformat(),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_scanner.py::test_recursive_scan_includes_subfolder - Assert...
+FAILED tests/test_scanner.py::test_max_depth_limits_recursion - AssertionErro...
+============= 2 failed, 20 passed, 1 skipped, 3 warnings in 0.74s =============

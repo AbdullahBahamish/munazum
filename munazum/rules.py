@@ -3,15 +3,21 @@ from pathlib import Path
 from typing import Dict, Set
 
 class Category(str, Enum):
+    IMAGES = "images"
     DOCUMENTS = "documents"
     CODE = "code"
     VIDEOS = "videos"
-    AUDIOS = "audios"
+    AUDIOS = "audio"
     EXECUTABLES = "executables"
     ARCHIVES = "archives"
     UNKNOWN = "unknown"
+    OTHERS = "others" 
 
 # ---- Extention mapping (deterministic, explicit) ----
+
+IMAGE_EXTENSIONS: Set[str] = {
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp"
+}
 
 DOCUMENT_EXTENSIONS: Set[str] = {
     ".pdf", ".doc", ".docx", ".txt", ".md", ".rtf"
@@ -42,6 +48,7 @@ ARCHIVE_EXTENSIONS: Set[str] = {
 # ---- Core rule engine ----
 
 EXTENSTION_CATEGORY_MAP: Dict[Category, Set[str]] = {
+    Category.IMAGES: IMAGE_EXTENSIONS,
     Category.DOCUMENTS: DOCUMENT_EXTENSIONS,
     Category.CODE: CODE_EXTENSIONS,
     Category.VIDEOS: VIDEO_EXTENSIONS,
@@ -63,11 +70,11 @@ def classify_by_extension(file_path: Path) -> Category:
         if suffix in extensions:
             return category
         
-    return Category.UNKNOWN
+    return Category.OTHERS
 
 def is_suppported(file_path: Path) -> bool:
     """
     Return True if the file belongs to a known category.
     """
-    return classify_by_extension(file_path) != Category.UNKNOWN
+    return classify_by_extension(file_path) != Category.OTHERS
 

@@ -35,7 +35,7 @@ def execute_plan(plan: List[PlanItem], dry_run: bool = False) -> None:
             continue
 
         destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, destination)
+        shutil.move(source, destination)
 
         # ML signal: this decision was accepted
         log_decision(

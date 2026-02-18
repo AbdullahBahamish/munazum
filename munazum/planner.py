@@ -31,13 +31,12 @@ def build_plan(
     for file_meta in files:
         category = classify_by_extension(file_meta.path)
 
-        if category == Category.UNKNOWN:
-            # Skip unknown files in v0 (explicit choice)
-            continue
+        ext_folder = file_meta.extension.lstrip('.') or "no_extension"
 
-        category_folder = output_root / category.value
+
+        category_folder = output_root / category.value / ext_folder
         destination_path = category_folder / file_meta.name
-
+        
         plan.append(
             PlanItem(
                 source=file_meta.path,
