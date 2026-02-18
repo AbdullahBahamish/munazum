@@ -1,62 +1,62 @@
-<p align="center">
+Below is a corrected and refined `README.md`. Redundancies removed. Structure tightened. Tone professional and consistent.
+
+---
+
+```html
+<!-- <p align="centre">
   <img src="assets/munazum-logo.png" alt="Munazum Logo" width="100%"/>
-</p>
+</p> -->
 
-<h1 align="center">📁 Munazum</h1>
+<h1 align="centre">Munazum</h1>
 
-<p align="center">
-  <strong>A safe, intelligent CLI for organising real-world folders</strong>
+<p align="centre">
+  <strong>A safe, intelligent CLI for organising real-world directories</strong>
 </p>
+```
 
 ---
 
+## What is Munazum?
 
----
+**Munazum** is a Python-based command-line tool that analyses and organises cluttered directories (e.g. Downloads) into a clean, predictable structure.
 
-
-## 🚀 What is Munazum?
-
-**Munazum** is a Python-based command-line tool that **analyses and organises cluttered directories** (such as your Downloads folder) into a clean, predictable structure.
-
-It combines **deterministic file rules** with **assistive machine-learning suggestions**, while keeping the user fully in control through transparent logging and a strict dry-run mode.
+It combines deterministic file rules with assistive machine-learning suggestions while keeping the user fully in control through transparent logging and a strict dry-run mode.
 
 No silent actions. No irreversible operations. No guesswork.
 
 ---
 
-## ✨ Why Munazum?
+## Why Munazum?
 
 Most file organisers either:
 
-* act blindly, or
-* over-promise “AI magic”
+* operate blindly, or
+* over-promise opaque “AI automation”.
 
-Munazum does neither.
+Munazum prioritises:
 
-It is built for users who value:
-
-* 🔍 **Visibility** over automation
-* 🛡️ **Safety** over speed
-* 🧠 **Explainable decisions** over black boxes
+* Visibility over automation
+* Safety over speed
+* Explainability over black-box behaviour
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 Munazum processes a directory in three stages:
 
 1. **Scan**
-   Recursively inspects files and folders.
+   Recursively inspects files and subdirectories.
 
 2. **Decide**
-   Applies rule-based classification, enhanced with confidence-scored ML suggestions.
+   Applies rule-based classification, optionally enhanced with confidence-scored ML suggestions.
 
 3. **Execute (optional)**
-   Copies files into a structured `Organized/` folder — *only if explicitly allowed*.
+   Copies files into a structured `Organized/` directory — only when explicitly permitted.
 
 ---
 
-## 📁 Resulting Structure
+## Resulting Structure
 
 ```text
 Organized/
@@ -68,11 +68,11 @@ Organized/
 └─ others/
 ```
 
-Original files are **never deleted or moved** — only copied.
+Original files are never deleted or moved. They are copied only.
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 git clone https://github.com/your-username/munazum.git
@@ -80,23 +80,23 @@ cd munazum
 pip install -e .
 ```
 
-Munazum is installed in **editable mode**, allowing global execution during development.
+Installed in editable mode for development and global CLI access.
 
 ---
 
-## ▶️ Usage
+## Usage
 
-### 🔹 Safe Preview (Recommended)
+### Safe Preview (Recommended)
 
 ```bash
 python -m munazum run . --dry-run
 ```
 
-> Shows what *would* happen — makes **zero filesystem changes**.
+Displays planned operations without modifying the filesystem.
 
 ---
 
-### 🔹 Full Transparency Mode
+### Verbose Preview
 
 ```bash
 python -m munazum run . --dry-run --verbose
@@ -112,53 +112,53 @@ INFO: DRY-RUN: Copying report.pdf → Organized/documents/report.pdf
 
 ---
 
-### 🔹 Real Execution
+### Execute Organisation
 
 ```bash
 python -m munazum run .
 ```
 
-> Executes the planned organisation and creates the `Organized/` folder.
+Creates the `Organized/` directory and performs the planned copy operations.
 
 ---
 
-## 🛡️ Safety First
+## Safety Model
 
-* Dry-run mode is **strict**
-* No folders or files are created unless permitted
-* All operations are logged
-* No destructive actions by design
-
-Munazum assumes **user trust must be earned, not assumed**.
+* Dry-run mode is strict
+* No files or folders are created unless execution is confirmed
+* All actions are logged
+* No destructive operations by design
 
 ---
 
-## 🧩 Design Principles
+## Design Principles
 
-* **Conservative by default**
-* **Transparent by design**
-* **Modular and extensible**
-* **Built for real folders, not demos**
+* Conservative by default
+* Transparent by design
+* Modular and extensible
+* Built for real-world directories
 
 ---
 
-## 📦 Technical Stack
+## Technical Stack
 
 * Python 3.10+
 * `pyproject.toml` packaging
-* Editable installs via `pip`
+* Editable installation via `pip`
 * CLI module execution (`python -m munazum`)
 
 ---
 
-##    Author
+## Author
 
-**Abdullah Bahamish**
-
+Abdullah Bahamish
 Computer Science student · AI & systems enthusiast
 
 ---
 
-## 📄 License
+## License
 
 MIT License
+
+```
+```
