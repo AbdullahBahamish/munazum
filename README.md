@@ -57,7 +57,7 @@ Original files are never deleted or moved. They are copied only.
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/munazum.git
+git clone https://github.com/AbdullahBahamish/munazum.git
 cd munazum
 pip install -e .
 ```
